@@ -1,6 +1,8 @@
-Flask==2.1.1
-Flask-Ngrok==0.0.25
-requests==2.26.0
-PyPDF2==1.26.0
-google-generativeai==0.3.2  # Replace with the correct version
+Flask
+Flask-Ngrok
+requests
+PyPDF2
+google-generativeai
+tensorflow
 Gunicorn
+Werkzeug
