@@ -14,6 +14,7 @@
         <button type="submit">Generate Summary</button>
     </form>
     <div id="summary"></div>
+    <div id="error"></div>
 
     <script>
         document.querySelector('form').addEventListener('submit', async function(event) {
@@ -28,7 +29,13 @@
             });
 
             const data = await response.json();
-            document.getElementById('summary').textContent = data.summary || data.error || 'Error processing PDF';
+            if (data.summary) {
+                document.getElementById('summary').textContent = data.summary;
+                document.getElementById('error').textContent = '';
+            } else {
+                document.getElementById('summary').textContent = '';
+                document.getElementById('error').textContent = data.error || 'Error processing PDF';
+            }
         });
     </script>
 </body>
